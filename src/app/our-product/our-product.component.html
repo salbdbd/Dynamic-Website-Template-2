@@ -1,0 +1,47 @@
+<div class="header">
+<div class="container">
+    <h3 class="h3 text-center mt-3 mb-3">Our Products</h3>
+    <div class="row">
+        <div class="col-md-3 col-sm-6 py-3" *ngFor="let item of allProduct" >
+            <div class="product-grid8">
+                <div class="product-image8">
+                    <a href="#">
+                        <img [src]="'data:image/'+item.extension+';base64,'+item.imageBase64" alt="Welcome" >                       
+                    </a>
+
+                    <span class="product-discount-label">0%</span>
+                </div>
+                <div class="product-content">
+                    <div class="price">£ {{item.salePrice}}
+                        <span>£ {{item.salePrice}}</span>
+                    </div>
+                    <span class="product-shipping">{{item.productName}}</span>
+                    <h3 class="title"><a href="#">{{item.productDescription}}</a></h3>
+                    <a class="all-deals" routerLink="/shopping-cart">Add to Cart <i class="fa fa-angle-right icon"></i></a>
+                </div>
+            </div>
+        </div> 
+
+
+        <div class="col-md-12 col-sm-6" *ngIf="allProduct.length==0">
+            <div class="product-grid8">
+                <div class="product-image8">
+                    <a href="#">
+                        <img class="pic-1" src="../../assets/images/moon.jpg">
+                    </a>
+                    <span class="product-discount-label">00%</span>
+                </div>
+                <div class="product-content">
+                    <div class="price">£ 00.00
+                        <span>£ 00.00</span>
+                    </div>
+                    <span class="product-shipping">Not Found Product</span>
+                    <h3 class="title"><a href="#">Women's Plain Top</a></h3>
+                    <!-- <a class="all-deals" routerLink="/shopping-cart">Add to Cart <i class="fa fa-angle-right icon"></i></a> -->
+                </div>
+            </div>
+        </div> 
+    </div>
+</div>
+<hr>
+</div>

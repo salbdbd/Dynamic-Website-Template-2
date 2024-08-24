@@ -1,0 +1,30 @@
+<div class="head py-2">
+    <h4 class="text-center mt-1 mb-0">Receivable Amount List</h4>
+</div>
+<div class="card mt-1" style="height: 650px; overflow: auto;">
+    <table class="table  text-center   table-bordered">
+        <thead>
+            <tr>
+                <th style="width:10%">SL</th>
+                <th style="width:20%">Period_Name</th>
+                <th style="width:15%">Member_Name</th>
+                <th style="width:10%">Member_Code </th>
+                <th style="width:15%">Service_Name</th>
+                <th style="width:10%">Amount</th>
+            </tr>
+        </thead>
+        <tbody class="text-center">
+            <tr *ngIf="rtpReceivableMembers.length==0">
+                <td colspan="7" class="text-center"><i>No Data found</i></td>
+            </tr>
+            <tr *ngFor="let rptlg of rtpReceivableMembers;let i=index">
+                <td style="width:10% ">{{i+1}}</td>
+                <td style="width:20% ; text-align: left;">{{rptlg.periodName}}</td>
+                <td style="width:15% ; text-align: right;">{{rptlg.memberName}}</td>
+                <td style="width:10% ; text-align: right;">{{rptlg.memberCode}}</td>
+                <td style="width:15% ; text-align: right;">{{rptlg.serviceName}}</td>
+                <td style="width:10% ; text-align: right;">{{rptlg.amount}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

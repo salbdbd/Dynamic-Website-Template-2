@@ -1,0 +1,68 @@
+.news-single-content{
+    margin-top: 50px;
+    font-size: 18px !important;
+    font-weight: 600;
+}
+
+.header-section{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../../assets/images/nature2.jpg');
+    background-size: cover; 
+    padding: 40px;
+    padding: 40px;
+    background-size: cover; 
+    background-position: center;  
+    background-repeat: no-repeat; 
+     
+}
+
+.header-section h2{
+    padding:20px;
+    text-align: center;
+    font-size: 26px;
+    color: rgb(247, 247, 247);
+    font-weight: bold;
+    text-shadow: 2px 2px 4px #fa0707;
+}
+.body-section{
+    background: white;
+    height: auto;
+    font-size: 16px;
+
+}
+.body-section .header{
+    font-weight: bolder;
+    padding-top: 50px;
+
+} 
+   
+   .body-section .description {
+    margin-top: 5px;
+    font-size: 14px;
+    font-style: normal;
+    position: relative;
+    text-align: justify;
+}
+
+.body-section .description .Image {
+    float: right;
+    padding: 10px;
+    margin-left: 10px;  
+    height: auto;
+}
+
+
+
+
+.list{
+
+}
+.list .type1 li{
+
+}
+.list .type2 li{
+
+}
+
+.null{
+     display: none !important;
+}

@@ -1,0 +1,14 @@
+<div class="head py-2">
+    <h4 class="text-center mt-1 mb-0">Notice</h4>
+</div>
+<div class="row text-center" style="background-color:#9ad5fc; height: 600px;">
+    <div *ngFor="let notice of notice">
+        <div>
+            HeadLine : {{notice.noticeHeadLine}}
+        </div>
+        <div class="details">
+            Details : {{notice.noticeDetails}}
+        </div>
+    </div>
+
+</div>

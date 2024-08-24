@@ -1,0 +1,14 @@
+<div *ngFor="let chairman of chairmInfo" class="card center ">
+    <div class="card-header text-center">
+        <h4>{{chairman.post}} Information</h4>
+    </div>
+    <div class="card-body text-center chairmanInfo">
+        <img *ngIf="chairman.wImage" class="cmImage rounded-circle comInfo" src="data:image/jpg;base64,{{chairman.wImage}}" alt="image" />
+        <div class=" mt-5">
+            <h4> {{chairman.name}}</h4><br/>
+            <h4> {{chairman.post}}</h4><br/>
+            <h6>{{chairman.detailsInfo}}</h6>
+        </div>
+    </div>
+
+</div>

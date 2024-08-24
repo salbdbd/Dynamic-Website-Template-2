@@ -1,0 +1,40 @@
+.card-title {
+  font-size: 30px;
+  width: 56%;
+  background-color: #99a3ab;
+  float: right;
+  overflow: hidden;
+  box-sizing: border-box;
+  padding: 5px;
+  margin-top: 8px;
+}
+.card-text{
+  padding: 5px;
+  width: 56%;
+  float: right;
+}
+.card-body {  
+  text-align: center;
+  min-height: 20vh;
+  overflow: hidden;
+  box-sizing: border-box;
+  background: #f1efef;
+}
+
+.header-section {
+  min-height: 21vh;
+  display: block;
+}
+
+.cmImage {
+  width: 40%;
+  height: 30vh;
+  float: left;
+}
+
+.marquee{
+  width: 90%;
+  margin: auto;
+  padding: 10px;
+  background: #000;
+}

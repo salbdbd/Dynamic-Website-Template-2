@@ -1,0 +1,160 @@
+ 
+<div class="body">
+    <div class="card-1">
+        <div id="demo" class="carousel slide" data-ride="carousel" >
+    
+            <div class="carousel-inner">
+                <div
+                 *ngFor="let img of allImage;let i=index"
+                  class="carousel-item" [ngClass]="{'active':i==0}">
+                    <img class="img-crsl opacity-50"  [src]="'data:image/'+img.extension+';base64,'+img.imageBase64"
+                        alt="Welcome"
+                        >
+                    <!-- <img src="/src/assets/" alt=""> -->
+                    <div class="carousel-caption">
+                       <div class="welcome-message">
+                        <div class="color_1 color_D_sabo fadeIn" >
+                            <h1>
+                                Give your business a flow
+                            </h1>
+                            <button class="welcomeButton"><span>Check us out</span></button>
+                        </div>
+                        <div class="color_2 color_D_sabo fadeIn" >
+                            <svg xmlns="http://www.w3.org/2000/svg" width="38" height="38" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 0.622);transform: msFilter"><path d="M12.005 21.992v-3.877c4.104 0 7.288-4.068 5.714-8.388a5.81 5.81 0 0 0-3.457-3.446c-4.319-1.563-8.389 1.61-8.389 5.714H2.008c0-6.541 6.325-11.642 13.184-9.499 2.991.94 5.383 3.321 6.313 6.313 2.141 6.858-2.96 13.183-9.5 13.183z"></path><path d="M12.017 18.139H8.152v-3.866h3.865zm-3.865 2.959H5.193v-2.959h2.959zm-2.959-2.959H2.711v-2.483h2.482v2.483z"></path></svg>
+                            <!-- <svg xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 0.622);transform: msFilter;"><path d="M15.661 15.549a1.315 1.315 0 0 0 1.185-1.386 1.363 1.363 0 0 0-1.35-1.302h-.048a1.352 1.352 0 0 0-1.303 1.397c.024.379.179.687.391.911-.827 1.609-2.07 2.794-3.954 3.788-1.266.663-2.604.912-3.905.734-1.089-.153-1.94-.64-2.463-1.421-.78-1.185-.852-2.462-.201-3.74a5.597 5.597 0 0 1 1.658-1.931 7.88 7.88 0 0 1-.331-1.218c-3.506 2.51-3.148 5.942-2.084 7.564.794 1.184 2.415 1.941 4.19 1.941.474 0 .972-.035 1.457-.154 3.077-.592 5.409-2.438 6.747-5.16l.011-.023z"></path><path d="M19.887 12.589c-1.834-2.154-4.533-3.337-7.611-3.337h-.403c-.2-.438-.661-.711-1.183-.711h-.036c-.744 0-1.325.64-1.301 1.385.023.71.627 1.302 1.35 1.302h.059a1.332 1.332 0 0 0 1.183-.828h.439c1.824 0 3.551.532 5.126 1.574 1.206.792 2.072 1.834 2.557 3.077.425 1.019.402 2.013-.035 2.843-.675 1.302-1.812 1.988-3.314 1.988-.947 0-1.871-.296-2.345-.509-.283.235-.758.626-1.102.863 1.042.473 2.096.746 3.113.746 2.309 0 4.023-1.302 4.676-2.557.709-1.422.651-3.813-1.161-5.859l-.012.023z"></path><path d="M7.647 15.975c.023.71.626 1.302 1.35 1.302h.048a1.334 1.334 0 0 0 1.302-1.397c0-.71-.616-1.301-1.338-1.301h-.048c-.048 0-.118 0-.178.022-.982-1.657-1.397-3.434-1.242-5.349.094-1.445.567-2.7 1.42-3.742.71-.888 2.048-1.326 2.96-1.35 2.556-.048 3.622 3.138 3.704 4.404l1.184.354C16.536 5.036 14.122 3 11.813 3 9.647 3 7.647 4.574 6.842 6.884c-1.102 3.077-.379 6.036.971 8.404-.118.154-.189.426-.166.687z"></path></svg> -->
+                            <!-- <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgb(73, 73, 73);transform: msFilter;"><path d="M6 14c-2.206 0-4 1.794-4 4s1.794 4 4 4a4.003 4.003 0 0 0 3.998-3.98H10V16h4v2.039h.004A4.002 4.002 0 0 0 18 22c2.206 0 4-1.794 4-4s-1.794-4-4-4h-2v-4h2c2.206 0 4-1.794 4-4s-1.794-4-4-4-4 1.794-4 4v2h-4V5.98h-.002A4.003 4.003 0 0 0 6 2C3.794 2 2 3.794 2 6s1.794 4 4 4h2v4H6zm2 4c0 1.122-.879 2-2 2s-2-.878-2-2 .879-2 2-2h2v2zm10-2c1.121 0 2 .878 2 2s-.879 2-2 2-2-.878-2-2v-2h2zM16 6c0-1.122.879-2 2-2s2 .878 2 2-.879 2-2 2h-2V6zM6 8c-1.121 0-2-.878-2-2s.879-2 2-2 2 .878 2 2v2H6zm4 2h4v4h-4v-4z"></path></svg> -->
+                            <h1>
+                                Perfect for your business and your managing
+                            </h1>
+                        </div>
+                       </div>
+                    </div>
+                </div>
+            </div>
+            <a class="carousel-control-prev carousel-cont" href="#demo" aria-disabled="false" data-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+            </a>
+            <a class="carousel-control-next carousel-cont" href="#demo" aria-disabled="false" data-slide="next">
+                <span class="carousel-control-next-icon"></span>
+            </a>
+        </div>
+        <div class="headline-section row" >
+            <div class="head-section col-md-2 "> Headline</div>
+            <div class="body-section col-md-9" *ngFor="let sn of headLine">
+                <marquee behavior="" style="font-size: 15px;" direction=""
+                onmouseover="this.stop();"
+                onmouseout="this.start();"
+                >{{sn.newsDesc}} </marquee>
+            </div>
+            <div class="head-section col-md-1"></div>
+        </div>
+
+        <div class="about-section row"
+        > 
+            <div class="body m-auto col-md-11" *ngFor="let about of aboutUs"> 
+                 <div [innerHtml]="about.description"></div>               
+            </div> 
+        </div>
+    </div>
+    
+    <div class="container-fluid mt-3">
+            <div class="row "> 
+    
+                <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+                    <div class="card shadow text-center">
+                        <h2 class="card-title card-header-bg">Events</h2>
+                        <div class="card-body">
+
+
+                            <div *ngFor="let item of events " id="event" >
+                               <div class="firstConnect">
+                                <div class="cardHeadIMG">
+                                    <img *ngIf="item.picture" class="cmImage mt-2"  (click)="createNewItem(item)" src="data:image/jpg;base64,{{item.picture}}"  alt="image" />
+                                    <div class="niggaIamblack"></div>
+                                </div>
+                                <div class="head">
+                                    <p style="font-size: 14px;" class="p card-text text-left">{{item.headLine}}</p>
+
+                                    <p style="font-size: 13px; font-weight: bold;" class="head-P card-title mt-3">{{item.inActiveDate | date:'dd &nbsp;|&nbsp; MM &nbsp;|&nbsp; yyyy'}}</p>
+                                    <button class="buttonReadMore" (click)="createNewItem(item)"> Read More</button> 
+                                    
+                                </div>
+                               </div>
+                               <hr>
+                             
+                            </div>
+    
+                        </div>
+    
+                    </div>
+    
+                </div>
+     
+                <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+                    <div class="card shadow text-center">
+                        <h2 class="card-title card-header-bg">News</h2>
+                        <div class="card-body">
+
+
+                            <!-- <div *ngFor="let item of news" id="news">
+                                <img *ngIf="item.picture" class="cmImage mt-2" (click)="createNewItem(item)" src="data:image/jpg;base64,{{item.picture}}"
+                                    alt="image" />
+                                <div class="head">
+                                    <p style="font-size: 13px; font-weight: bold;" class=" card-title mt-3">{{item.inActiveDate | date:'dd &nbsp;|&nbsp; MM &nbsp;|&nbsp; yyyy'}}</p>
+                                </div>
+                                <div class="footer">
+                                    <p style="font-size: 13px;" class="p card-text text-left">{{item.headLine}}</p>
+                                    <p class="card-text" style="font-size: 12px;">{{item.newsInfo.substring(0, 130)}} ...</p>                                 
+                                   
+                                </div>
+                                <button class="btn btn-outline-info mb-2 class-button" (click)="createNewItem(item)"> Read More</button>                               
+                                 
+                            </div>     -->
+                            <div *ngFor="let item of news " id="news" >
+                                <div class="firstConnect">
+                                 <div class="cardHeadIMG">
+                                     <img *ngIf="item.picture" class="cmImage mt-2"  (click)="createNewItem(item)" src="data:image/jpg;base64,{{item.picture}}"  alt="image" />
+                                     <div class="niggaIamblack"></div>
+                                 </div>
+                                 <div class="head">
+                                     <p style="font-size: 14px;" class="p card-text text-left">{{item.headLine}}</p>
+ 
+                                     <p style="font-size: 13px; font-weight: bold;" class="head-P card-title mt-3">{{item.inActiveDate | date:'dd &nbsp;|&nbsp; MM &nbsp;|&nbsp; yyyy'}}</p>
+                                     <button class="buttonReadMore" (click)="createNewItem(item)"> Read More</button> 
+                                     
+                                 </div>
+                                </div>
+                                <hr>
+                              
+                             </div>
+                        </div>    
+                    </div>    
+                </div>
+    
+                <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+                    <div class="card shadow   text-center">
+                        <h2 class="card-title card-header-bg">Notice</h2>
+                        <div class="card-body">
+
+
+                            <div *ngFor="let notice of notice" id="notice " class="d-flex flex-column justify-content-start">
+                                <p style="font-size: 13px; font-weight: bold;" class=" card-title mt-3">{{notice.noticeHeadLine}}</p>
+                               
+                                <p class="card-text" style="font-size: 13px;">{{notice.noticeDetails}}</p>
+                           </div>
+                        </div>
+    
+                    </div>
+                </div>
+            </div>
+        </div>
+</div>
+ 
+<ng-container *ngIf="showBasicModal"> 
+    <ng-container *ngTemplateOutlet="transList"></ng-container>   
+</ng-container>
+
+<ng-template #transList>
+  <app-basic-modal (selectEvent)="getNews()" [newsenvent]="0" [modalData]="passnews" [title]="title" ></app-basic-modal>
+</ng-template>
+ 

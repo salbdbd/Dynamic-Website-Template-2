@@ -1,0 +1,22 @@
+.cmImage {
+    height: 140px;
+    width: 150px;
+}
+
+.chairmanInfo {
+    /* background-color: #9ad5fc; */
+    background-color: black;
+    height: 630px;
+}
+
+.cmInfo {
+    margin-left: 30px;
+}
+
+.contactImg {
+    height: 140px;
+}
+
+.comInfo {
+    margin-left: 30px;
+}

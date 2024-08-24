@@ -1,0 +1,35 @@
+<!-- Add this line in the head section of your HTML file -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+<div class="modal-container" id="modal-container" (mouseover)="open()">
+  <div class="card-header">
+  <div class="TitleNClose  ">
+    
+    <abbr title="Save Image">
+      <a href="data:image/jpg;base64,{{modalData.picture}}" download='item.jpg'>
+        <img *ngIf="modalData.picture" class="cmImage mt-2" src="data:image/jpg;base64,{{modalData.picture}}"
+          alt="image" />
+      </a>
+    </abbr>
+
+  </div>
+  <!-- Close icon -->
+  
+ <div class="niggerArseHORE">
+  <h4 class="text-center d-flex justify-content-end  align-items-center ">
+
+    <a class="close" id="closee" (click)="cancel()" class="text-danger fas fa-window-close"></a>
+
+
+  </h4>
+  <div class="NewsText d-flex flex-column p-4 ">
+    <h6 class=" datetime">{{modalData.inActiveDate | date:'dd &nbsp;|&nbsp; MM &nbsp;|&nbsp; yyyy'}}</h6>
+    <hr>
+    <h5 class="card-title">{{modalData.headLine}}</h5>
+    <p class="card-text ">{{modalData.newsInfo}}</p>
+  </div>
+ </div>
+  </div>
+
+  <ng-content></ng-content>
+</div>

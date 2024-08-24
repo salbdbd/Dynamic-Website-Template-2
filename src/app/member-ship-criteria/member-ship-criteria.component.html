@@ -1,0 +1,44 @@
+
+<div class="header-section">
+    <h2>Member Ship Criteria </h2> 
+</div> 
+
+<div class="container">
+<div *ngFor="let item of memberCriteriaView">
+    <div class="body-section">
+            <div class="header">{{item.heading}}</div>
+        <div class="description">
+            <img *ngIf="item.picture" class="Image mt-2" src="data:image/jpg;base64,{{item.imageBase64
+            }}" alt="image" /> 
+            <i>{{item.description}}</i>
+        </div>
+
+        
+          
+    
+    </div>
+    <div class="type">
+        <div class="list">
+            <ul class="type1">
+                <li class="{{item.list1}}" *ngIf="item.list1!=null">{{item.list1}}</li>
+                <li class="{{item.list2}}" *ngIf="item.list2!=null">{{item.list2}}</li>
+                <li class="{{item.list3}}" *ngIf="item.list3!=null">{{item.list3}}</li>
+                <li class="{{item.list4}}" *ngIf="item.list4!=null">{{item.list4}}</li>
+                <li class="{{item.list5}}" *ngIf="item.list5!=null">{{item.list5}}</li>
+                <li class="{{item.list6}}" *ngIf="item.list6!=null">{{item.list6}}</li>
+                <li class="{{item.list7}}" *ngIf="item.list7!=null">{{item.list7}}</li>
+                <li class="{{item.list8}}" *ngIf="item.list8!=null">{{item.list8}}</li>
+                <li class="{{item.list9}}" *ngIf="item.list9!=null">{{item.list9}}</li>
+                <li class="{{item.list10}}" *ngIf="item.list10!=null">{{item.list10}}</li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer">  
+        {{item.footerdesc}}
+    </div>     
+</div>
+
+
+
+</div>
+ 

@@ -1,0 +1,17 @@
+<div class="hoverUrAss  pt-3">
+    <form [formGroup]="pictureForm" class="YO">
+        <h2>Hover The Pictures</h2>
+
+
+        <ul class="img-footer-section ">
+            <li class="BigBearNigga" *ngFor="let img of allImage">
+                <a *ngIf="img.wPicture"class="" [href]="'data:image/'+img.extension+';base64,'+img.imageBase64"
+                    [download]="'image.' + img.extension"> <img 
+                        [src]="'data:image/'+img.extension+';base64,'+img.imageBase64" class=""
+                        alt="Images">
+                    </a>
+            </li>
+    
+        </ul>
+    </form>
+</div>

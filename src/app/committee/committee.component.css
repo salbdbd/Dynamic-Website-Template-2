@@ -1,0 +1,178 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/* .cmImage1 {
+
+    box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+    width: 240px !important;
+    height: 240px !important;
+    border-radius: 10px;
+  }
+  .cmImage2 {
+   
+    box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+    width: 110px !important;
+    height: 110px !important;
+    border-radius: 10px;
+  } */
+  .cmImage {
+    /* justify-content: center;
+    display: flex;
+    position: absolute;
+    top: -50px; */
+    /* box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px; */
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 30px 90px;/* box-shadow: rgba(0, 0, 0, 0.4) 0px 30px 90px; */
+    /* box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px; */
+    width: 150px !important;
+    height: 150px !important;
+    border-radius: 10px;
+  }
+  .card-main {
+    padding: 20px;
+  }
+  .row{
+    flex-wrap: wrap; 
+  }
+/* 
+  .designer-card1 { 
+    border-radius: 10px;
+    justify-content: center;
+    align-items: center;
+    text-align: center
+    ;
+    height: 300px;
+    padding: 20px;box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+    font-family: Arial, sans-serif;
+    background-color: rgb(253, 253, 253);
+    border:  5px  solid rgba(0, 0, 0, 0.1); 
+  }
+  .designer-card2 {
+    background: #fff;
+    display: flex !important;
+    border-radius: 10px;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column ;
+    text-align: center
+    ;
+    height: 250px;
+    padding: 20px;box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+    font-family: Arial, sans-serif;
+    background-color: rgb(253, 253, 253);
+    border:  5px  solid rgba(0, 0, 0, 0.1);
+  } */
+
+
+  .designer-card {
+    display: flex !important;
+    border-radius: 10px;
+    justify-content: center;
+    background: transparent;
+    flex-direction: column ;
+    align-items: start;
+    text-align: center
+    ;
+    gap: 10px !important;
+    height: 200px; 
+    padding: 20px;
+    
+  }
+  .designer-title {
+    display: flex;
+    justify-content: start;
+    flex-direction: column;
+    align-items: center;
+    
+  }
+  .items {
+    display: flex;
+    flex-direction: column;
+    gap: 0px !important;
+    text-align: left !important;
+    width: 300px;
+    align-items: start;
+    line-height: 10px !important;
+  }
+  .name {
+    font-size: 15px;
+    color: rgb(103, 125, 206);
+    font-weight: 600;
+    text-align: start !important;
+    line-height: 14px !important;
+    width: 300px;
+    display: flex;
+    
+    font-family: 'Poppins', sans-serif !important;
+  }
+  
+  .position {
+    width: 100%;
+    text-align: left;
+    line-height: 14px !important;
+    font-family: 'Poppins', sans-serif !important;
+    color: #333;
+    font-size: 1.3em;
+    
+    font-weight: 600;
+  }
+  .profile-card {
+    background: transparent;
+    box-shadow: 10px 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .profile-image {
+    border-radius: 50%;
+    width: 60px;
+    border: solid;
+  }
+  
+  .name {
+    text-align: center;
+    font-family: Poiret One;
+  }
+  
+  .occupation {
+    text-align: center;
+    font-family: Poiret One;
+  }
+  
+  .description {
+    text-align: center;
+    font-family: Red Hat Display;
+    font-weight: 300;
+  }
+  
+  .programming-languages {
+    display: flex;
+    justify-content: space-around;
+  }
+  
+  .language-icon {
+    width: 40px;
+  }
+  
+  .email {
+    background-color: black;
+    color: white;
+    display: flex;
+    justify-content: center;
+    font-family: Poppins;
+    border-radius: 5px;
+    transition: 0.3s;
+  }
+  
+  .email:hover {
+    background-color: #00D9C0;
+  }
+  
+  .socials {
+    display: flex;
+    justify-content: flex-end;
+    gap: 8px;
+  }
+  
+  .designer-card  {
+    width: 340px;
+  }

@@ -1,0 +1,211 @@
+footer{
+  /* bottom: 0; */
+ 
+  min-height: 30vh;
+ 
+  padding: 0;
+  margin: 0;
+  background: #24262b;
+  width: 100vw;
+  /* padding-top: 40px; */
+  color: #fff;
+}
+
+.footer-bottom p {
+  padding: 0px 0px 0px 0px !important;
+  text-align: center !important;
+  margin: 0px 0px 0px 0px !important;
+}
+.footer-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  text-align: center;
+  height: 100%;
+  width: 100%;
+}
+.insidePoint {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  align-items: start;
+  padding: 0px 100px 30px 100px;
+}
+
+.footer-content h3 {
+  font-size: 2.1rem;
+  font-weight: 500;
+  text-transform: capitalize;
+  line-height: 3rem;
+}
+.info {
+
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  margin: 0px 0px 0px 0px;
+  padding: 0px 0px 0px 0px;
+  justify-content: start;
+}
+.info li {
+  display: flex;
+  margin: 0px 0px 0px 0px;
+  padding: 0px 0px 0px 0px;
+  align-items: center;
+  justify-content: left;
+}
+@media screen and (max-width: 532px) {
+  .insidePoint {
+    flex-direction: column !important;
+  }
+}
+.contactInfo .info li a{
+  font-size: 12px !important;
+  font-weight: 400 !important; 
+  line-height: .5;
+}
+h2 {
+  font-weight: 400;
+}
+.info li p {
+  align-items: center;
+  font-size: 15px;
+  text-align: left;
+  display: flex;
+  justify-content: space-between;
+   margin: 0px 0px 10px 0px;
+  padding: 0px 0px 0px 0px;
+
+}
+.info li p span {
+  width: 260px !important;
+  font-weight: 500;
+}
+.footer-content p {
+  max-width: 500px;
+  margin: 10px auto;
+  line-height: 28px;
+  font-size: 14px;
+  color: #ffffff;
+}
+.info li p i {
+  color: #88a0e1;
+}
+.fa-clock {
+  font-size: 17px;
+  color: #8ba1de;
+
+}
+.info li p  {
+  font-weight: 500;
+}
+.socials {
+  padding:20px;
+  list-style: none;
+  display: flex;
+  margin: 0px 0px 0px 0px;
+  padding: 0px 0px 0px 0px;
+  justify-content: start;
+}
+
+.socials li {
+  display: flex;
+ 
+  justify-content: center;
+  gap: 20px;
+  list-style: none; 
+}
+
+.socials a {
+  text-decoration: none;
+  color: #fff;
+  background: #32343b;
+  width: 38px;
+  height: 38px;
+  text-align: center !important;
+  display: flex !important;
+  justify-content: left !important;
+  align-items: center !important;
+  border-radius: 0%;
+
+  transition: 0.25s;
+}
+.socials a i {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.25s;
+}
+.socials i:hover {
+  background: var(--clr);
+}
+.socials a:hover {
+  transform: translateY(-10px);
+}
+
+.socials .at_twitter:hover {
+  box-shadow: rgba(46, 204, 240, 0.4) 0px 5px, rgba(46, 201, 240, 0.3) 0px 10px,
+    rgba(46, 195, 240, 0.2) 0px 15px;
+
+}
+.socials .at_gplus:hover {
+  box-shadow: rgba(240, 46, 46, 0.4) 0px 5px, rgba(240, 46, 46, 0.3) 0px 10px,
+    rgba(240, 46, 46, 0.2) 0px 15px;
+}
+.socials .at_facebook:hover {
+  box-shadow: rgba(46, 146, 240, 0.4) 0px 5px,
+    rgba(46, 153, 240, 0.3) 0px 10px, rgba(46, 185, 240, 0.2) 0px 15px;
+}
+.socials .at_youtube:hover {
+  box-shadow: rgba(235, 22, 22, 0.4) 0px 5px, rgba(240, 12, 12, 0.3) 0px 10px,
+    rgba(241, 31, 31, 0.2) 0px 15px;
+}
+.socials .at_linkedin:hover {
+  box-shadow: rgba(67, 134, 241, 0.4) 0px 5px,
+    rgba(70, 134, 235, 0.3) 0px 10px, rgba(68, 157, 241, 0.2) 0px 15px;
+}
+.socials .at_whatsapp:hover {
+  box-shadow: rgba(29, 229, 82, 0.4) 0px 5px, rgba(24, 224, 64, 0.3) 0px 10px,
+    rgba(25, 229, 46, 0.2) 0px 15px;
+}
+
+.socials a i {
+  font-size: 1.5rem;
+  transition: color 0.4s ease;
+}
+
+.footer-bottom {
+  width: 100%;
+  display: flex;
+  padding: 10px 100px ;
+  justify-content: center;
+  align-items: center !important;
+  background: #3b60c9;
+}
+
+.footer-bottom a {
+  color: white;
+  font-size: 14px;
+}
+
+@media (max-width: 700px) {
+  .footer-menu ul {
+    display: flex;
+    margin-top: 10px;
+    margin-bottom: 20px;
+  }
+
+}
+
+
+ul li {
+  list-style:none;
+}
+ 
+a {
+  color: #fff;
+  text-decoration-line: none;
+}

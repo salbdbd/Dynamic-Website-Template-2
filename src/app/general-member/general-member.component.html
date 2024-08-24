@@ -1,0 +1,658 @@
+<div class="card"> 
+  <div class="row">
+    <div class="col-12">
+      <h4 class="card-header text-center bg-light py-5">
+        Transaction Entry Form
+      </h4>
+    </div>
+    <div class="col-6"></div>
+      <div class="col-6">
+      <div class="container"> 
+ 
+
+
+        <app-report-select-list [moduleId]="subModuleId" [pageId]="200" [isExporting]="isExporting"
+        (onChangeExportType)="exportType = $event.exportType"
+        (onChangeReportType)="reportId = 1"
+        ></app-report-select-list>   
+      </div>
+    </div>
+  </div>  
+
+  <div class="card-body">
+
+    <form [formGroup]="memPersonalInfoForm">
+     <div class="row">
+
+            <div class="col-6 container m-auto p-4 mb-7 ">
+              
+              <div class="form-group row">
+                <label class="col-sm-3 col-form-label">Date:</label>
+                <div class="col-sm-9">
+                  <input formControlName="date" type="date" class=" form-control" placeholder="Date">
+                </div>
+              </div>
+              <div class="form-group row">
+                <label class="col-sm-3 col-form-label">Purpose:</label>
+                <div class="col-sm-9">
+                  <ng-select formControlName="serviceDateId" [items]="salaryHead" bindLabel="serviceName" bindValue="id"
+                             placeholder="Select purpose" (change)="updateAmount($event)"></ng-select>
+                </div>
+              </div>
+              <div *ngIf="filterServiceTypeID==1" class="form-group row  p-0">
+
+              </div>
+
+                <div *ngIf="filterServiceTypeID==4" class="form-group row  p-0">
+                <!-- <div *ngIf="filterServiceTypeID==3" class="form-group row"> -->
+                  <div class="col-4 row"></div>
+                  <div class="col-8 p-0 row ml-2 ">
+
+              
+                        <div class="data-table m-0">
+                            <table class="table  text-center table-bordered">
+                                <thead>
+                                    <tr>
+                                        <td style="width:5%; font-size: 11px;">SL#</td>
+                                        <td style="width:20%; font-size: 11px;">Sub Service Name</td>
+                                        <td style="width:10%; font-size: 11px;">Quentity</td>
+                                        <td style="width:10%; font-size: 11px;">Unit Amount</td>
+                                        <td style="width:10%; font-size: 11px;">Total Amount</td> 
+                                    </tr>
+                                </thead>                                
+                                <tbody>
+                                  <tr *ngFor="let itemArray of allServiceSubHeadNameArray.controls;let i=index" [formGroup]="itemArray">
+                                    <td style="width:5%; font-size: 11px;">{{i+1}}</td>
+                                    <td style="width:20%; font-size: 11px;padding:5px">
+                                       {{itemArray.value.subServiceName}}
+                                    </td>
+                                    <td style="width:10%">
+                                      <input type="number" class="form-control" (input)="calculateTotalPrice(itemArray)" formControlName="quentity" placeholder="0.00">
+                                    </td>
+                                    <td style="width:10%;font-size:10px; ;padding:5px">
+                                      {{ itemArray.value.unitPrice }}
+                                    </td>
+                                    <td style="width:10%; background: #413a3aa1; ">
+                                      <input readonly style="background: none; border: none; padding:5px;color:white"  type="number" class="form-control" formControlName="totalPrice" Placeholder="00">
+                                    </td>
+                                  </tr>
+                                </tbody>
+                            </table>
+                        </div>  
+                        
+                      </div>
+                    </div> 
+                    
+                  
+              <div class="form-group row">
+                <label class="col-sm-3 col-form-label">Transection Type:</label>
+                <div class="col-sm-9">
+                  <ng-select formControlName="transactionTypeId" [items]="transactionType" bindLabel="name" bindValue="id"
+                    placeholder="Select Pay Type"></ng-select>
+                </div>
+              </div>
+
+              <div class="form-group row">
+                <label for="message" class="col-sm-3 col-form-label">Amount</label>
+                <div class="col-sm-9">
+                  <input readonly type="number" class="form-control" formControlName="amount"  Placeholder="0"> 
+ 
+                </div>
+              </div>
+
+              <div class="form-group row">
+                <label for="message" class="col-sm-3 col-form-label">TransectionId</label>
+                <div class="col-sm-9">
+                  <input type="text" class="form-control" formControlName="transactionId" Placeholder="Enter Transaction Id">
+                </div>
+              </div>
+             
+              <div class="form-group row">
+                <label class="col-sm-3 col-form-label">Note:</label>
+                <div class="col-sm-9">
+              <input formControlName="note" type="text" class=" form-control" placeholder="Note">
+                </div>
+              </div>  
+            <div class="form-group row">
+              <label class="col-form-label col-sm-3 ">Picture <i class="text-danger">*</i> </label>
+              <div class="col-sm-9">
+                  <app-image-control [fieldId]="'pictureFileName'" [previewImg]="formVal.picture" (selectedFile)="f['picture'].setValue($event)" (getFileOnChange)="pictureDesign()"></app-image-control> 
+                  <h5 class="text-danger mt-4 float-right" id="sizeMessage">{{sizeMessage}}</h5>
+              </div>
+          </div> 
+            </div>  
+            <div class="row col-12">
+              <div class="demo-inline-spacing  mt-3 center" style="margin:0 auto">
+                <button (click)="reset() ;onExportReport($event)" class="btn  btn-primary mx-2">Reset</button>
+                <button (click)="UpdateMember()" [class.memberHide]="!isMemberInfoVisible" class=" btn  btn-success mx-2">Update</button>
+                <button class="btn btn-info" (click)="SaveTransactionEntry()">Submit Transaction</button>
+                <button (click)="showMemberInfo()" [class.memberHide]="isMemberInfoVisible" class=" btn  btn-secondary mx-2">Show Member Info</button>
+                <button (click)="showMemberInfo()" [class.memberHide]="!isMemberInfoVisible" class=" btn  btn-danger mx-2">Hide Member Info</button>
+         
+              </div>
+            </div>
+            
+
+
+
+            <div class="col-12 " [class.memberHide]="!isMemberInfoVisible">
+              <h4 class="card-header text-center bg-light py-5">
+                Member General Information
+              </h4>
+            </div>                
+            <div class="col-md-6 " [class.memberHide]="!isMemberInfoVisible">
+              <div class="form-group row">
+                <label class="col-form-label col-md-4 text-md-right">Member Code
+                  <i class="text-danger">*</i>
+                </label>
+                <div class="input-group col-md-6">
+                  <input formControlName="memberCode" class="form-control" placeholder="Member Code" disabled>
+                </div>
+              </div>
+
+              <div class="form-group row">
+                <label class="col-form-label col-md-4 text-md-right">Member Name
+                  <i class="text-danger">*</i></label>
+                <div class="input-group col-md-6">
+                  <input formControlName="memberName" type="text" class="form-control" placeholder="Member Name" required>
+                </div>
+              </div>
+
+              <div class="form-group row">
+                <label class="col-form-label col-md-4 text-md-right ">Father's Name<i class="text-danger">*</i>
+                </label>
+                <div class="col-md-6">
+                  <input formControlName="fathersName" type="text" class="form-control" placeholder="Enter Father's Name">
+                </div>
+              </div>
+              <div class="form-group row">
+                <label class="col-form-label col-md-4 text-md-right">Mother's Name<i class="text-danger">*</i></label>
+                <div class="col-md-6">
+                  <input formControlName="mothersName" type="text" class="form-control" placeholder="Enter Mother's Name">
+                </div>
+              </div>
+              <div class="form-group row">
+                <label class="col-form-label col-md-4 text-md-right">Gender
+                  <i class="text-danger">*</i> </label>
+                <div class="col-md-8 row">
+                  <div class="col-md-9">
+                    <ng-select formControlName="genderID" [items]="genderList" bindLabel="description" bindValue="id"
+                      placeholder="Select Gender">
+                    </ng-select>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group row">
+                <label class="col-form-label col-md-4 text-md-right">Blood Group
+                  <i class="text-danger">*</i> </label>
+                <div class="col-md-8 row">
+                  <div class="col-md-9">
+                    <ng-select formControlName="bloodGroupID" [items]="bloodGroup" bindLabel="description" bindValue="id"
+                      placeholder="Select Blood Group">
+                    </ng-select>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-group row">
+                <label class="col-form-label col-md-4 text-md-right">Religion
+                  <i class="text-danger">*</i> </label>
+                <div class="col-md-8 row">
+                  <div class="col-md-9">
+                    <ng-select formControlName="religionID" [items]="religionList" bindLabel="description" bindValue="id"
+                      placeholder="Select Religion">
+                    </ng-select>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-group row">
+                <label class="col-form-label col-md-4 text-md-right ">National ID/BC <i class="text-danger">*</i>
+                </label>
+                <div class="col-md-6">
+                  <input formControlName="nationalityID" type="text" class=" form-control"
+                    placeholder="Enter National ID Number">
+
+                </div>
+              </div>
+              <div class="form-group row">
+                <label class="col-form-label col-md-4 text-md-right ">Mobile </label>
+                <div class="col-md-6">
+                  <input formControlName="mobileNo" type="text" class=" form-control" placeholder="Enter Mobile Number">
+
+                </div>
+              </div>
+
+              <div class="form-group row">
+                <label class="col-form-label col-md-4 text-md-right ">Email </label>
+                <div class="col-md-6">
+                  <input formControlName="email" type="email" class="form-control" placeholder="Enter Email">
+                </div>
+
+              </div>
+              <div class="form-group row">
+                <label class="col-form-label col-md-4 text-md-right">Maritial Status
+                  <i class="text-danger">*</i> </label>
+                <div class="col-md-8 row">
+                  <div class="col-md-9">
+                    <ng-select formControlName="maritialStatusID" [items]="maritialList" bindLabel="description"
+                      bindValue="id" placeholder="Select MaritialStatus">
+                    </ng-select>
+                  </div>
+                </div>
+              </div>
+              <div *ngIf="f['maritialStatusID'].value==1" class="form-group row">
+                <label class="col-form-label col-md-4 text-md-right">Spouse Name
+                  <i class="text-danger">*</i>
+                </label>
+                <div class="col-md-6">
+                  <input formControlName="spousName" type="text" class="form-control" placeholder="Spouse Name">
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-6 " [class.memberHide]="!isMemberInfoVisible">
+                  <div class="form-group row">
+                    <label class="col-form-label col-md-4 text-md-right">Picture
+                      <i class="text-danger">*</i>
+                    </label>
+                    <div class="col-md-6">
+                     <div *ngIf="memberPersonalInfo.picture">
+                        <!--  <img class="d-block" src="data:image/jpg;base64,{{memberPersonalInfo.picture}}" height="150px" width="120px" alt="image" /> -->
+                        <img *ngIf="memberPersonalInfo.picture" src="data:image/jpg;base64,{{memberPersonalInfo.picture}}"
+                          height="150px" width="120px" alt="image" />
+                      </div>
+                    </div>
+                  </div> 
+    
+                  <div class="form-group row">
+                    <label class="col-form-label col-md-4 text-md-right">Location
+                      <i class="text-danger">*</i> </label>
+                    <div class="col-md-8 row">
+                      <div class="col-md-9">
+                        <ng-select formControlName="location" [items]="locationList" bindLabel="description" bindValue="id"
+                          placeholder="Select Location">
+                        </ng-select>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="form-group row">
+                    <label class="col-form-label col-md-4 text-md-right">Present Thana
+                      <i class="text-danger">*</i> </label>
+                    <div class="col-md-8 row">
+                      <div class="col-md-9">
+                        <ng-select formControlName="thanaID" [items]="thanaList" bindLabel="thanaName" bindValue="thanaID"
+                          (change)="onSelectPresentThana($event);" placeholder="Select Thana">
+                        </ng-select>
+                      </div>
+                      <div class="custom-control custom-checkbox  row col-md-3">
+                        <input formControlName="isSameThana" (change)="onSameSelect()" type="checkbox"
+                          class="custom-control-input row" id="same">
+                        <label class=" custom-control-label " for="same">
+                          Same
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="form-group row">
+                    <label class="col-form-label col-md-4 text-md-right">Present Upazila </label>
+                    <div class="col-md-6">
+                      <input formControlName="presentUpazila" type="text" class="form-control"
+                        placeholder="Enter Present Upazila" disabled>
+                    </div>
+                  </div>
+
+                  <div class="form-group row">
+                    <label class="col-form-label col-md-4 text-md-right">Present District</label>
+                    <div class="col-md-6">
+                      <input formControlName="presentDistrict" type="text" class="form-control"
+                        placeholder="Enter Present District" disabled>
+                    </div>
+                  </div>
+
+                  <div class="form-group row">
+                    <label class="col-form-label col-md-4 text-md-right">Present Address
+                      <i class="text-danger">*</i>
+                    </label>
+                    <div class="col-md-8 row">
+                      <div class="col-md-9">
+                        <textarea formControlName="presentAddress" type="text" class="form-control"
+                          placeholder="Enter Present Address"></textarea>
+                      </div>
+                      <div class="custom-control custom-checkbox  row col-md-3">
+                        <input formControlName="allSame" (change)="onSameAddressSelect()" type="checkbox"
+                          class="custom-control-input row" id="allSame">
+                        <label class=" custom-control-label " for="allSame">
+                          Is Same
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="form-group row">
+                    <label class="col-form-label col-md-4 text-md-right">Parmanent Thana<i class="text-danger">*</i></label>
+                    <div class="col-md-6">
+                      <ng-select formControlName="permanentThanaID" [items]="thanaList" bindLabel="thanaName"
+                        bindValue="thanaID" (change)="onSelectPermanentThana($event);" placeholder="Select Thana">
+                      </ng-select>
+                    </div>
+                  </div>
+
+                  <div class="form-group row">
+                    <label class="col-form-label col-md-4 text-md-right">Parmanent Upazila</label>
+                    <div class="col-md-6">
+                      <input formControlName="permanetUpazila" type="text" class="form-control"
+                        placeholder="Enetr Parmanent Upazila" disabled>
+                    </div>
+                  </div>
+
+                  <div class="form-group row">
+                    <label class="col-form-label col-md-4 text-md-right">Parmanent District</label>
+                    <div class="col-md-6">
+                      <input formControlName="permanetDistrict" type="text" class="form-control"
+                        placeholder="Enetr Parmanent District" disabled>
+                    </div>
+                  </div>
+
+                  <div class="form-group row">
+                    <label class="col-form-label col-md-4 text-md-right">Parmanent Address
+                      <i class="text-danger">*</i>
+                    </label>
+                    <div class="col-md-6">
+                      <textarea formControlName="permanentAddress" type="text" class="form-control"
+                        placeholder="Enetr Parmanent Address"></textarea>
+
+                    </div>
+                  </div>
+
+                  <div class="form-group row">
+                    <label class="col-form-label col-md-4 text-md-right">Last Education </label>
+                    <div class="col-md-6">
+                      <input type="text" formControlName="lastEducation" class="form-control"
+                        placeholder="Enter Last Education">
+                    </div>
+                  </div>
+
+                  <div class="form-group row">
+                    <label class="col-form-label col-md-4 text-md-right">Present Position</label>
+                    <div class="col-md-6">
+                      <input type="text" formControlName="position" class="form-control" placeholder="Enter Present Position">
+                    </div>
+                  </div>
+
+                  <div class="form-group row">
+                    <label class="col-form-label col-sm-4 text-sm-right ">Department <i class="text-danger">*</i> </label>
+                    <div class="col-sm-6">
+                      <ng-select formControlName="departmentID" (change)="onselectDepartment($event)" [items]="departments"
+                        bindLabel="description" bindValue="id" placeholder="Department"></ng-select>
+                    </div>
+                  </div>
+
+                  <div class="form-group row">
+                    <label class="col-form-label col-sm-4 text-sm-right ">Hall/Institution <i class="text-danger">*</i> </label>
+                    <div class="col-sm-6">
+                      <ng-select formControlName="hallID" (change)="onselectHall($event)" [items]="halls"
+                        bindLabel="description" bindValue="id" placeholder="Hall/Institution"></ng-select>
+                    </div>
+                  </div> 
+    
+        </div>         
+      </div>  
+
+      
+
+    </form>
+   
+
+<hr class="mt-4">
+    <div class="data-table mt-4 ">
+      <table class="table mb-0 table-bordered mt-5 md-5">
+        <thead>
+          <tr>
+            <th class="tc-80">SL</th>
+            <th class="tc-80">TransID</th>
+            <th class="tc-100">Voucher_Date</th>
+            <th class="tc-100">Voucher_No</th>
+            <th class="tc-200">Account_Head</th>
+            <th class="tc-100">Due Amount</th>
+            <th class="tc-100">Paid Amount</th>
+            <th class="tc-100">Balance</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngIf="AccountsLedgerInfo.length==0">
+            <td colspan="9" class="text-center"><i>No Data found</i></td>
+          </tr>
+          <tr *ngFor="let rptlg of AccountsLedgerInfo;let i=index">
+            <td class="tc-80">{{i+1}}</td>
+            <td class="tc-80">{{rptlg.transId}}</td>
+            <td class="tc-100">
+              {{rptlg.vdate}}
+            </td>
+            <td class="tc-100">{{rptlg.vno}}</td>
+            <td class="tc-200">{{rptlg.accountName}}</td>
+            <td class="tc-100">{{rptlg.drAmount | number:'2.2-2'}}</td>
+            <td class="tc-100">{{rptlg.crAmount | number:'2.2-2'}}</td>
+            <td class="tc-100">{{rptlg.amount | number:'2.2-2'}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+ 
+
+</div> 
+
+
+<ng-template #serviceTypeSelector>  
+  <div class="submitTransaction-section row">
+    <div class="submitTransaction col-12 row">   
+      <div class="card-columns   mx-auto d-flex justify-content-center col-12">    
+        <div class="card-body p-0">    
+          <div class="row my-0 ">
+            <div class="col-12">
+              <a (click)="modalService.dismissAll()" class="float-right px-2 text-white bg-danger font-size-25px d-block mb-4">X</a>
+            </div>
+            <div class="col text-center mb-4">         
+              <h2 class="">Transaction Entry Form</h2>
+            </div>
+          </div>
+          <form [formGroup]="memPersonalInfoForm">
+            <!-- <div class="container-fluid mx-4"> -->
+            <!-- <form> -->
+            <div class="form-group row">
+              <label class="col-sm-3 col-form-label">Transection Type:</label>
+              <div class="col-sm-9">
+                <ng-select formControlName="transactionTypeId" [items]="transactionType" bindLabel="name" bindValue="id"
+                  placeholder="Select Pay Type"></ng-select>
+              </div>
+            </div>
+    
+            <div class="form-group row">
+              <label for="message" class="col-sm-3 col-form-label">Amount</label>
+              <div class="col-sm-9">
+                <input type="number" class="form-control" formControlName="amount" Placeholder="00">
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="message" class="col-sm-3 col-form-label">TransectionId</label>
+              <div class="col-sm-9">
+                <input type="text" class="form-control" formControlName="transactionId" Placeholder="Enter Transaction Id">
+              </div>
+            </div>
+    
+            <div class="form-group row">
+              <label class="col-sm-3 col-form-label">Purpose:</label>
+              <div class="col-sm-9">
+                <ng-select formControlName="serviceDateId" [items]="salaryHead" bindLabel="serviceName" bindValue="id"
+                  placeholder="Select purpose"></ng-select>
+              </div>
+            </div>
+            <div class="form-group row">
+              <label class="col-sm-3 col-form-label">Date:</label>
+              <div class="col-sm-9">
+                <input formControlName="date" type="date" class=" form-control" placeholder="Date">
+              </div>
+            </div>
+            <div class="form-group row">
+              <label class="col-sm-3 col-form-label">Note:</label>
+              <div class="col-sm-9">
+             <input formControlName="note" type="text" class=" form-control" placeholder="Note">
+              </div>
+            </div>
+            <div class="row">
+              <div class="demo-inline-spacing  mt-3 center" style="margin:0 auto">
+                <button (click)="reset()" class="btn  btn-primary mx-2">Reset</button>
+                <button (click)="SaveTransactionEntry()" class="btn  btn-success mx-2">Save</button>
+              </div>
+            </div>
+    
+          </form>
+    
+        </div>
+      </div>
+    </div>
+    </div>
+</ng-template>
+<!--  
+ 
+<ng-template #serviceTypeSelector>   
+<div class="submitTransaction-section row">
+<div class="submitTransaction col-12 row">   
+  <div class="card-columns   mx-auto d-flex justify-content-center col-12">    
+    <div class="card-body p-0">    
+      <div class="row my-0 ">
+        <div class="col-12">
+          <a (click)="modalService.dismissAll()" class="float-right px-2 text-white bg-danger font-size-25px d-block mb-4">X</a>
+        </div>
+        <div class="col text-center mb-4">         
+          <h2 class="">Member Entry Form</h2>
+        </div>
+      </div>
+      <form [formGroup]="memPersonalInfoForm"> 
+         
+        <div class="form-group row">
+          <label class="col-sm-3 col-form-label">Person Type</label>
+          <div class="col-sm-9">
+          <input type="text" class="form-control" formControlName="amount" Placeholder="Enter Amount">           
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-sm-3 col-form-label">Person No</label>
+          <div class="col-sm-9">
+          <input type="number" class="form-control" formControlName="amount" Placeholder="Enter Amount">           
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-sm-3 col-form-label">Unit Price</label>
+          <div class="col-sm-9">
+          <input type="number" class="form-control" formControlName="amount" Placeholder="Enter Amount">     
+          </div>      
+        </div>
+        <div class="form-group row">
+          <label for="message" class="col-sm-3 col-form-label">Total Amount</label>
+          <div class="col-sm-9">
+            <input type="number" class="form-control" formControlName="amount" Placeholder="Enter Amount">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="message" class="col-sm-3 col-form-label">Net Amount</label>
+          <div class="col-sm-9">
+            <input type="number" class="form-control" formControlName="amount" Placeholder="Enter Amount">
+          </div>
+        </div>
+          
+        <div class="row">
+          <div class="demo-inline-spacing  mt-3 center" style="margin:0 auto">
+            <button (click)="reset()" class="btn  btn-primary mx-2">Reset</button>
+            <button (click)="test()" class="btn  btn-success mx-2">Save</button>
+          </div>
+        </div>
+
+      </form>
+
+    </div>
+  </div>
+</div>
+</div>
+ 
+</ng-template> -->
+
+<ng-template #submitTransaction>
+  <div class="submitTransaction-section row">
+    <div class="submitTransaction col-12 row">   
+      <div class="card-columns   mx-auto d-flex justify-content-center col-12">    
+        <div class="card-body p-0">    
+          <div class="row my-0 ">
+            <div class="col-12">
+              <a (click)="modalService.dismissAll()" class="float-right px-2 text-white bg-danger font-size-25px d-block mb-4">X</a>
+            </div>
+            <div class="col text-center mb-4">         
+              <h2 class="">Transaction Entry Form</h2>
+            </div>
+          </div>
+           <form [formGroup]="memPersonalInfoForm">
+   
+            <div class="form-group row">
+              <label class="col-sm-3 col-form-label">Transection Type:</label>
+              <div class="col-sm-9">
+                <ng-select formControlName="transactionTypeId" [items]="transactionType" bindLabel="name" bindValue="id"
+                  placeholder="Select Pay Type"></ng-select>
+              </div>
+            </div>
+    
+            <div class="form-group row">
+              <label for="message" class="col-sm-3 col-form-label">Amount</label>
+              <div class="col-sm-9">
+                <input type="number" class="form-control" formControlName="amount" Placeholder="Enter Amount">
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="message" class="col-sm-3 col-form-label">TransectionId</label>
+              <div class="col-sm-9">
+                <input type="text" class="form-control" formControlName="transactionId" Placeholder="Enter Transaction Id">
+              </div>
+            </div>
+    
+            <div class="form-group row">
+              <label class="col-sm-3 col-form-label">Purpose:</label>
+              <div class="col-sm-9">
+                <ng-select formControlName="serviceDateId" [items]="salaryHead" bindLabel="serviceName" bindValue="id"
+                  placeholder="Select purpose"></ng-select>
+              </div>
+            </div>
+            <div class="form-group row">
+              <label class="col-sm-3 col-form-label">Date:</label>
+              <div class="col-sm-9">
+                <input formControlName="date" type="date" class=" form-control" placeholder="Date">
+              </div>
+            </div>
+            <div class="form-group row">
+              <label class="col-sm-3 col-form-label">Note:</label>
+              <div class="col-sm-9">
+             <input formControlName="note" type="text" class=" form-control" placeholder="Note">
+              </div>
+            </div>
+            <div class="row">
+              <div class="demo-inline-spacing  mt-3 center" style="margin:0 auto">
+                <button (click)="reset()" class="btn  btn-primary mx-2">Reset</button>
+                <button (click)="SaveTransactionEntry()" class="btn  btn-success mx-2">Save</button>
+              </div>
+            </div>
+    
+          </form>
+    
+        </div>
+      </div>
+    </div>
+    </div>    
+    
+</ng-template> 
+
+
+
+
+
+

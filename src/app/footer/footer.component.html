@@ -1,0 +1,104 @@
+<footer *ngFor="let info of companyInformation"> 
+    
+    <div class="footer-content d-flex ">
+        
+        <h1 class="m-5">{{info.name}}</h1>
+        <div class="insidePoint">
+            <div class="contactInfo  d-flex  flex-column justify-content-left ">
+                <h2 class="my-md-2 text-left ">Contact Information</h2>
+                 
+                <ul class="info g-0">
+                    <li>
+                        <p class="text-white "><i class=" fas fa-map"></i>&nbsp; &nbsp; 
+                           <span><a target="_blank" href="https://www.google.com/maps/search/?api=1&query={{info.address}}" target="_blank">{{info.address}}</a></span></p>
+
+                    </li>
+                    <li>
+                        <p class="text-white "><i class=" fas fa-globe"></i>&nbsp;&nbsp;  <span> <a target="_blank"  [href]="info.website">{{info.website}}</a></span></p>
+
+                    </li>
+                    <li>
+                        <p class="text-white "><i class=" fas fa-envelope"></i>&nbsp;&nbsp;  <span> <a target="_blank"  href="mailto:{{info.email}}">{{info.email}}</a></span></p>
+
+                    </li>
+                     
+                    <li>
+                        <p class="text-white "><i class=" fas fa-phone"></i>&nbsp;&nbsp;  <span> <a target="_blank"  [href]="'tel:' + info.phone">{{info.phone}}</a> </span></p>
+
+                    </li>
+              
+                </ul>
+            </div>
+
+
+
+            <div class="contactInfo  d-flex  flex-column justify-content-left ">
+                <h2 class="my-md-2 text-left ">Other Reincarnation</h2> 
+                
+                    <ul class="info g-0 ">
+                        <!-- <li>
+                            <p><span><a href="" routerLink="/">Pokemon</a></span></p>
+                        </li> -->
+                        
+                    </ul>
+                    
+            </div>
+            <div class="contactInfo  d-flex  flex-column justify-content-left ">
+                <h2 class="my-md-2 text-left ">Useful Links</h2> 
+                    <ul class="info g-0 ">
+                        <li>
+                            <p><span><a  href="" routerLink="/about">About Us</a></span></p>
+                        </li>
+                        <li>
+                            <p><span><a routerLink="/committee">Committee</a></span></p>
+                        </li>
+                        <li>
+                            <p><span><a routerLink="/newsEvents">News & Events</a></span></p>
+                        </li>                        
+                    </ul>
+               
+            </div>
+            <div class="d-flex flex-column justify-content-between ">
+                <div class="socialMedia d-flex  flex-column justify-content-left ">
+                    <h2 class="text-left my-md-2 ">Work Hours </h2>
+                    <p class="text-white "><i class=" fas fa-clock"></i>&nbsp; 9 AM - 6 PM , Sunday-Thursday</p>
+                </div>
+                <div class="socialMedia d-flex  flex-column justify-content-left ">
+                    <h2 class="text-left my-md-4 ">Social Media </h2>
+                    <ul class="socials ">
+                        <link rel="stylesheet"
+                            href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+                        <li (onClick)="onSelectSocial('Twitter')">
+                            <a class="at_twitter" (mouseover)="onSelectSocial('Twitter')" target="_blank" href="{{socialMedia.links}}"
+                            ><i style="--clr: #00e1ff;--i: 1;"
+                                    class="fa fa-twitter"></i></a></li>
+
+                        <li (onClick)="onSelectSocial('google-plus')">
+                            <a class="at_gplus" (mouseover)="onSelectSocial('google-plus')" target="_blank" href="{{socialMedia.links}}"><i style="--clr: #ff4000;--i: 2;"
+                                    class="fa fa-google-plus"></i></a></li>
+
+                        <li (onClick)="onSelectSocial('Facebook')">
+                            <a class="at_facebook" (mouseover)="onSelectSocial('Facebook')" target="_blank" href="{{socialMedia.links}}">
+                                          <i style="--clr: #00bbff; --i: 3;" class="fa fa-facebook"></i>
+                                        </a>
+                                      </li>
+                        <li (onClick)="onSelectSocial('Youtube')">
+                            <a class="at_youtube" (mouseover)="onSelectSocial('Youtube')" target="_blank" href="{{socialMedia.links}}"><i style="--clr: #ff0000;--i: 4;"
+                                    class="fab fa-youtube"></i></a></li>
+                        <li (onClick)="onSelectSocial('Linkedin')">
+                            <a class="at_linkedin" (mouseover)="onSelectSocial('Linkedin')" target="_blank" href="{{socialMedia.links}}"><i style="--clr: #519cff;--i: 5;"
+                                    class="fa fa-linkedin-square"></i></a></li>
+                        <li (onClick)="onSelectSocial('whatsapp')">
+                            <a class="at_whatsapp"  (mouseover)="onSelectSocial('whatsapp')" target="_blank" href="{{socialMedia.links}}"><i style="--clr: #1be236;--i: 6;"
+                                    class="fa fa-whatsapp"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- <svg id="visual" viewBox="0 0 900 600" width="900" height="600" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"><path d="M0 505L129 505L129 463L257 463L257 423L386 423L386 481L514 481L514 513L643 513L643 387L771 387L771 395L900 395L900 440L900 601L900 601L771 601L771 601L643 601L643 601L514 601L514 601L386 601L386 601L257 601L257 601L129 601L129 601L0 601Z" fill="#0066FF" stroke-linecap="square" stroke-linejoin="miter"></path></svg> -->
+        <div class="footer-bottom">
+            <p>Copyright &copy; <a href="#">Developed by Software Arena Ltd</a></p>
+        </div>
+    </div> 
+</footer>

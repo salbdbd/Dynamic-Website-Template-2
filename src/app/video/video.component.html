@@ -1,0 +1,70 @@
+ 
+
+  <div class="row video-section">
+    <div class="col-md-7 video bg-transparent" *ngIf="autorunVideoFile!=''">
+      <video controls id="preview" class="form-control" style="height: 460px; width:100%;" autoplay>
+          <source src="data:video/mp4;base64,{{autorunVideoFile}}" type="video/mp4">
+         
+      </video>
+  </div>        
+    <div class="col-md-5">
+      <div class="heading text-left ">TOP STORIES</div>
+      <!-- <div class="DateTime"><i class='fas fa-play'></i> <b style="text-align: center; padding-left: 30px; ">{{modifydatef2}}  {{modifydates2}}</b></div> -->
+      <hr>
+      <div class="body pl-4 pr-4"  >
+         
+            <div *ngFor="let item of videolist ; let i=index" class="p-4" >
+            <p style="width: 90%;padding: 5px;display: flex;
+            align-items: center;gap: 10px;" (click)="selectVideo(item)"> 
+              <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" style="fill: #ffffff;transform: ;msFilter:;"><path d="M12 2C6.486 2 2 6.486 2 12s4.486 10 10 10 10-4.486 10-10S17.514 2 12 2zm0 18c-4.411 0-8-3.589-8-8s3.589-8 8-8 8 3.589 8 8-3.589 8-8 8z"></path><path d="m9 17 8-5-8-5z"></path></svg><a >{{item.videoCaption.substring(0, 100)}}</a></p>
+            <!-- <td style="width: 5%;padding: 5px;" (click)="selectVideo(item)"><a >fadfasdfasd</a></td>   -->
+      </div>
+    </div>
+  
+ 
+       
+ 
+  </div>
+
+  
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 
+  <div class="col-md-6 video" *ngIf="autorunVideoFile==''">       
+    <video src="data:video/mp4;base64,{{wVideoFile}}" accept="video/*" id="preview" class="" alt="image preview place"  class="form-control" style="height: 360px; width:100%;" autoplay ></video>      
+  </div>
+
+  <div class="col-md-6 video" *ngIf="autorunVideoFile!=''" >       
+      <video src="data:video/mp4;base64,{{autorunVideoFile}}" accept="video/*" id="preview" class="" alt="image preview place"  class="form-control" style="height: 360px; width:100%;" autoplay ></video>      
+  </div> -->

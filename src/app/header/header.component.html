@@ -1,0 +1,79 @@
+ <div class="header-sectionset-possition">
+  <!-- <h5 class="messageFile text-center" id="messageFile"> 
+  <b> Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore pariatur natus, amet dolorum earum adipisci  </b> <i class="text-danger fas fa-window-close " (click)="alertMessageClose()"></i></h5> -->
+<div class="header-menu-responsive  shadow-lg">
+ 
+  <div id='cssmenu'>
+    <ul>
+
+      <li *ngFor="let img of allImage;let i=index" class="headerlogo_section"> <a href=""><img class="headerlogo"
+            [src]="'data:image/'+img.extension+';base64,'+img.imageBase64" alt="headerlogo"> </a>
+      </li>
+      <li style="margin: 0px; padding: 0 !important;" (click)="onSelectMainMenu(mainMenu, $event)" *ngFor="let mainMenu of menuNames"
+        [ngClass]="{'active has-sub':mainMenu.subCriteria.length>0}"><a class="navLink"><span>{{mainMenu.detailsCaption}}</span></a>
+        <ul *ngIf="mainMenu.subCriteria.length>0" style="" class="menu bg-white">
+          <li (click)="onSelectMenu(menu,$event)"  *ngFor="let menu of mainMenu.subCriteria"
+            [ngClass]="{'active has-sub':menu.subCriteria.length>0}"><a class="subNavLink"><span>{{menu.detailsCaption}}</span></a>
+            <ul *ngIf="menu.subCriteria.length>0" class="bg-white shadow-lg subMenu">
+              <li *ngFor="let subMenu of menu.subCriteria" (click)="onSelectSubMenu(subMenu,$event)"
+                Class="active has-sub">
+                <a><span>{{subMenu.detailsCaption}}</span></a>
+
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</div>
+</div>
+<div class="header-sectionset-possitionafter"></div>
+<div class="topnav">
+  <div class="active menuIcon " *ngFor="let img of allImage;let i=index"> <a href=""><img class="headerlogo"
+        [src]="'data:image/'+img.extension+';base64,'+img.imageBase64" alt="headerlogo"></a> </div>
+  <div id="myLinks">
+    <!-- Place your header menu here -->
+    <div class="header-menu header-min-section shadow-lg">
+      <div id='cssmenu' class="ssmenu">
+        <ul>
+
+
+          <li class="item-allmenu" *ngFor="let mainMenu of menuNames"
+            [ngClass]="{'active has-sub':mainMenu.subCriteria.length>0}">
+            <a><span>{{mainMenu.detailsCaption}}</span></a>
+            <ul *ngIf="mainMenu.subCriteria.length>0" class="bg-white">
+              <li (click)="onSelectMenu(menu,$event)" *ngFor="let menu of mainMenu.subCriteria"
+                [ngClass]="{'active has-sub':menu.subCriteria.length>0}">
+                <a><span>{{menu.detailsCaption}}</span></a>
+                <ul *ngIf="menu.subCriteria.length>0" class="bg-white shadow-lg subMenu">
+                  <li *ngFor="let subMenu of menu.subCriteria" (click)="onSelectSubMenu(subMenu,$event)"
+                    Class="active has-sub">
+                    <a class=""><span>{{subMenu.detailsCaption}}</span></a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <!-- End of header menu -->
+  </div>
+  <a href="javascript:void(0);" class="icon  menuIcon" (click)="myFunction()">
+    <i class="fa fa-bars"></i>
+  </a>
+</div>
+
+
+
+<ng-template #Login>
+  <app-login></app-login>
+</ng-template>
+<ng-template #home>
+  <app-body></app-body>
+</ng-template>
+<ng-template #pageInfo>
+  <app-page-information></app-page-information>
+</ng-template>
+ 

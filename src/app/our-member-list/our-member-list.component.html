@@ -1,0 +1,60 @@
+
+<div class="contain   pt-5 align-items-start  d-flex flex-column">
+    <div class="head items  w-100 " >
+        <div class="textSearch d-flex  ">
+            <h2>Member Information</h2>
+            <div class="dummyDAce d-flex flex-column ">
+                <div class="searchBar">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 0.523);transform: msFilter;"><path d="M10 18a7.952 7.952 0 0 0 4.897-1.688l4.396 4.396 1.414-1.414-4.396-4.396A7.952 7.952 0 0 0 18 10c0-4.411-3.589-8-8-8s-8 3.589-8 8 3.589 8 8 8zm0-14c3.309 0 6 2.691 6 6s-2.691 6-6 6-6-2.691-6-6 2.691-6 6-6z"></path></svg>
+                    
+                    <input (keyup)="onFilter($event)" class="  search-input" placeholder="Search by MemberName Or Code">
+                    
+                </div>
+                <div class="total">
+                    <h4>Total Members : {{filtermemberlist.length}}</h4>
+                </div>
+            </div>
+            
+        </div>
+        
+    </div>
+    <div class="tabs items ">
+     <div class="bigbear">
+        <div class="doge ">
+            <div *ngFor="let item of allmembertype" class="LOL d-flex align-items-center ">
+                <div class="item">
+                    <a (click)="open(item.parentID)">{{item.remarks}}</a>
+                </div>
+             
+            </div>
+        </div>
+     </div>
+   
+    </div>
+    <div class="table-responsive">
+        <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">Sl No</th>
+                <th scope="col">Name</th>
+                <th scope="col">Code</th>
+                <th scope="col">Mobile</th>
+                <th scope="col">Address</th>
+          </tr>
+            </thead>
+            <tbody>
+                <tr *ngIf="filtermemberlist.length==0">
+                    <td colspan="5" class="p-4 text-center"> Not Found Data</td>
+                </tr>
+              <tr *ngFor="let item of filtermemberlist; let i=index"> 
+                <td scope="row">{{i+1}}</td>
+                <td>{{item.memberName}}</td>
+                <td> {{item.memberCode}}</td>
+                <td>{{item.mobileNo}}</td>
+                <td> {{item.presentAddress}}</td>
+              </tr>
+            
+            </tbody>
+          </table>
+    </div>
+</div>

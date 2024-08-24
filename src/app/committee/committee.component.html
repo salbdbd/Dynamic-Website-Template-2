@@ -1,0 +1,37 @@
+<div class="card-header text-center p-4">
+    <h4 class="p-4">Committee</h4>
+</div>
+<br><br><br>
+
+
+<div class="container mt-3">
+    <div class="row">
+<div *ngFor="let item of committeeSingle; let i=index" class="card-main  col-md-12  " >
+            
+    <div class="designer-card m-auto">
+        <img *ngIf="item.image" class="cmImage  " src="data:image/jpg;base64,{{item.imageBase64}}" alt="image" />
+        <div class="designer-title">
+      <div class="items p-2"> 
+        <p class="name">{{item.name}}</p>
+      <p class="position">{{item.post}}</p>
+      </div>
+    </div>
+</div> 
+</div> 
+   
+        <div *ngFor="let item of committee; let i=index" class="card-main col-xs-12 col-sm-12 col-md-4 col-lg-4 " >
+            
+            <div class="designer-card "  >
+                <img *ngIf="item.image" class="cmImage  " src="data:image/jpg;base64,{{item.imageBase64}}" alt="image" />
+                <div class="designer-title">
+              <div class="items p-2"> 
+                <p class="name">{{item.name}}</p>
+              <p class="position">{{item.post}}</p>
+              </div>
+            </div>
+        </div> 
+        </div>          
+            
+        </div>
+     
+</div> 

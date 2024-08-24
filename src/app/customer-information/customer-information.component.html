@@ -1,0 +1,58 @@
+<div class="card">
+    <h4 class="card-header text-center bg-light p-0">
+        Customer Information
+    </h4>
+    <div class="card-body">
+        <table>
+            <tr>
+                <b>Name : </b>{{memberPersonalInfo.memberName}}<br/>
+
+            </tr>
+            <tr>
+                <b>Alias Name : </b>{{memberPersonalInfo.memberName}}
+            </tr>
+            <tr>
+                <b>Contact No : </b>{{memberPersonalInfo.mobileNo}}
+            </tr>
+            <tr>
+                <b>Email : </b>{{memberPersonalInfo.email}}
+            </tr>
+            <tr>
+                <b>Address : </b>{{memberPersonalInfo.presentAddress}}
+            </tr>
+        </table>
+        <div class="data-table m-0 ">
+            <table class="table mb-0 table-bordered mt-5 md-5">
+                <thead>
+                    <tr>
+                        <th class="tc-80">SL</th>
+                        <th class="tc-80">TransID</th>
+                        <th class="tc-100">Voucher_Date</th>
+                        <th class="tc-100">Voucher_No</th>
+                        <th class="tc-200">Account_Head</th>
+                        <th class="tc-100">Dr.Amount</th>
+                        <th class="tc-100">Cr.Amount</th>
+                        <th class="tc-100">Balance</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngIf="AccountsLedgerInfo.length==0">
+                        <td colspan="9" class="text-center"><i>No Data found</i></td>
+                    </tr>
+                    <tr *ngFor="let rptlg of AccountsLedgerInfo;let i=index">
+                        <td class="tc-80">{{i+1}}</td>
+                        <td class="tc-80">{{rptlg.transId}}</td>
+                        <td class="tc-100">
+                            {{rptlg.vdate}}
+                        </td>
+                        <td class="tc-100">{{rptlg.vno}}</td>
+                        <td class="tc-200">{{rptlg.accountName}}</td>
+                        <td class="tc-100">{{rptlg.drAmount | number:'2.2-2'}}</td>
+                        <td class="tc-100">{{rptlg.crAmount | number:'2.2-2'}}</td>
+                        <td class="tc-100">{{rptlg.amount | number:'2.2-2'}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

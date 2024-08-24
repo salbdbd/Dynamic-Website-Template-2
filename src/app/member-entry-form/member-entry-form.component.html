@@ -1,0 +1,264 @@
+<div class="card header     ">
+  <h4 class="card-header text-center bg-light py-3">
+    To be a Member 
+  </h4>
+  <div class="card-body">
+    <form [formGroup]="memPersonalInfoForm">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form-group row">
+            <label class="col-form-label col-md-4 text-md-right">Member Code
+                <i class="text-danger">*</i>
+            </label>
+            <div class="input-group col-md-8 input-group ">
+                <input formControlName="memberCode" class="form-control" placeholder="Member Code">
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label class="col-form-label col-md-4 text-md-right">Member Name
+                <i class="text-danger">*</i></label>
+            <div class="input-group col-md-8 input-group ">
+                <input formControlName="memberName" type="text" class="form-control" placeholder="Member Name" required>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label class="col-form-label col-md-4 text-md-right ">Father's Name<i class="text-danger">*</i>
+            </label>
+            <div class="input-group  col-md-8 input-group ">
+                <input formControlName="fathersName" type="text" class="form-control" placeholder="Enter Father's Name">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-form-label col-md-4 text-md-right">Mother's Name<i
+                    class="text-danger">*</i></label>
+            <div class="col-md-8 input-group ">
+                <input formControlName="mothersName" type="text" class="form-control" placeholder="Enter Mother's Name">
+            </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-form-label col-md-4 text-md-right">Gender
+              <i class="text-danger">*</i> </label>
+          <div class="col-md-8 input-group">
+                  <ng-select formControlName="genderID" [items]="genderList" bindLabel="description" bindValue="id" placeholder="Select Gender">
+                  </ng-select>
+          </div>
+      </div>
+      <div class="form-group row">
+          <label class="col-form-label col-md-4 text-md-right">Blood Group
+              <i class="text-danger">*</i> </label>
+          <div class="col-md-8 input-group  ">
+                  <ng-select formControlName="bloodGroupID" [items]="bloodGroup" bindLabel="description" bindValue="id" placeholder="Select Blood Group">
+                  </ng-select>
+          </div>
+      </div>
+
+      <div class="form-group row">
+          <label class="col-form-label col-md-4 text-md-right">Religion
+              <i class="text-danger">*</i> </label>
+          <div class="col-md-8 input-group  row">
+              <div class="col-md-12">
+                  <ng-select formControlName="religionID" [items]="religionList" bindLabel="description" bindValue="id" placeholder="Select Religion">
+                  </ng-select>
+              </div>
+          </div>
+      </div>
+
+      <div class="form-group row">
+        <label class="col-form-label col-md-4 text-md-right ">National ID/BC <i
+                class="text-danger">*</i>
+        </label>
+        <div class="col-md-8 input-group ">
+            <input formControlName="nationalityID" type="text" class=" form-control" placeholder="Enter National ID Number">
+
+        </div>
+    </div>
+    <div class="form-group row">
+        <label class="col-form-label col-md-4 text-md-right ">Mobile </label>
+        <div class="col-md-8 input-group ">
+            <input formControlName="mobileNo" type="text" class=" form-control" placeholder="Enter Mobile Number">
+
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <label class="col-form-label col-md-4 text-md-right ">Email </label>
+        <div class="col-md-8 input-group ">
+            <input formControlName="email" type="email" class="form-control" placeholder="Enter Email">
+        </div>
+
+    </div>
+
+    <div class="form-group row">
+      <label class="col-form-label col-md-4 text-md-right ">Date Of Birth </label>
+      <div class="col-md-8 input-group ">
+          <input formControlName="dateOfBirth" type="date" class=" form-control" placeholder="Enter Mobile Number">
+
+      </div>
+  </div>
+    <div class="form-group row">
+        <label class="col-form-label col-md-4 text-md-right">Maritial Status
+            <i class="text-danger">*</i> </label>
+        <div class="col-md-8 input-group  row">
+            <div class="col-md-12">
+                <ng-select formControlName="maritialStatusID" [items]="maritialList" bindLabel="description" bindValue="id" placeholder="Select MaritialStatus">
+                </ng-select>
+            </div>
+        </div>
+    </div>
+    <div *ngIf="f['maritialStatusID'].value==1" class="form-group row">
+        <label class="col-form-label col-md-4 text-md-right">Spouse Name
+            <i class="text-danger">*</i>
+        </label>
+        <div class="col-md-8 input-group ">
+            <input formControlName="spousName" type="text" class="form-control" placeholder="Spouse Name">
+        </div>
+    </div>
+ 
+
+          <div class="form-group row">
+            <label class="col-form-label col-md-4 text-md-right">Location
+                <i class="text-danger">*</i> </label>
+            <div class="col-md-8 input-group  row">
+                <div class="col-md-12">
+                    <ng-select formControlName="location" [items]="this.locationList" bindLabel="description" bindValue="id"
+                placeholder="Select Location">
+              </ng-select>
+                </div>
+            </div>
+        </div>
+
+        </div>
+          <div class="col-md-6">
+                    <div class="form-group row">
+                        <label class="col-form-label col-md-4 text-md-right">Picture
+                            <i class="text-danger">*</i>
+                        </label>
+                        <div class="col-md-8 input-group ">
+                         <app-image-control  [fieldId]="'pictureFileName'" (selectedFile)="f['picture'].setValue($event)" [previewImg]="formVal.picture"></app-image-control>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="col-form-label col-md-4 text-md-right">Present Thana
+                            <i class="text-danger">*</i> </label>
+                        <div class="col-md-8 input-group  row">
+                            <div class="col-md-12">
+                                <ng-select formControlName="thanaID" [items]="thanaList" bindLabel="thanaName" bindValue="thanaID" (change)="onSelectPresentThana($event);" placeholder="Select Thana">
+                                </ng-select>
+                            </div>
+                            <div class="custom-control custom-checkbox  row col-md-3">
+                                <input formControlName="isSameThana" (change)="onSameSelect()" type="checkbox" class="custom-control-input row" id="same">
+                                <label class=" custom-control-label " for="same">
+                                    Same
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="col-form-label col-md-4 text-md-right">Present Upazila </label>
+                        <div class="col-md-8 input-group ">
+                            <input formControlName="presentUpazila" type="text" class="form-control" placeholder="Enter Present Upazila" disabled>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="col-form-label col-md-4 text-md-right">Present District</label>
+                        <div class="col-md-8 input-group ">
+                            <input formControlName="presentDistrict" type="text" class="form-control" placeholder="Enter Present District" disabled>
+                        </div>
+                    </div>
+                    <div class="form-group row  ">
+                        <label class="col-form-label col-md-4 text-md-right">Present Address
+                            <i class="text-danger">*</i>
+                        </label>
+                        <!-- <div class="col-md-8 input-group  d-flex flex-column  align-items-start ">
+                            <div class="col-md-12">
+                                <textarea formControlName="presentAddress" type="text" class="form-control" placeholder="Enter Present Address"></textarea>
+                            </div>
+                            <div class="custom-control custom-checkbox   ">
+                                <input formControlName="allSame" (change)="onSameAddressSelect()" type="checkbox" class="custom-control-input row" id="allSame">
+                                <label class=" custom-control-label " for="allSame">
+                                    Is Same
+                                </label>
+                            </div>
+                        </div> -->
+                        <div class="col-md-8 input-group  row">
+                            <div class="col-md-12">
+                                <textarea formControlName="presentAddress" type="text" class=" input-group form-control" placeholder="Enter Present Address"></textarea>
+
+                            </div>
+                            <div class="custom-control custom-checkbox  row col-md-3">
+                                <input formControlName="isSameThana" (change)="onSameSelect()" type="checkbox" class="custom-control-input row" id="same">
+                                <label class=" custom-control-label " for="allSame">
+                                    Is Same
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="col-form-label col-md-4 text-md-right">Parmanent Thana<i
+                                class="text-danger">*</i></label>
+                        <div class="col-md-8 input-group ">
+                            <ng-select formControlName="permanentThanaID" [items]="thanaList" bindLabel="thanaName" bindValue="thanaID" (change)="onSelectPermanentThana($event);" placeholder="Select Thana">
+                            </ng-select>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-form-label col-md-4 text-md-right">Parmanent Upazila</label>
+                        <div class="col-md-8 input-group ">
+                            <input formControlName="permanetUpazila" type="text" class="form-control" placeholder="Enetr Parmanent Upazila" disabled>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="col-form-label col-md-4 text-md-right">Parmanent District</label>
+                        <div class="col-md-8 input-group ">
+                            <input formControlName="permanetDistrict" type="text" class="form-control" placeholder="Enetr Parmanent District" disabled>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-form-label col-md-4 text-md-right">Parmanent Address
+                            <i class="text-danger">*</i>
+                        </label>
+                        <div class="col-md-8 input-group ">
+                            <textarea formControlName="permanentAddress" type="text" class="form-control" placeholder="Enetr Parmanent Address"></textarea>
+
+                        </div>
+                    </div>
+
+                    <div  class="form-group row">
+                      <label class="col-form-label col-md-4 text-md-right">Last Education </label>
+                      <div class="col-md-8 input-group ">
+                          <input type="text" formControlName="lastEducation" class="form-control" placeholder="Enter Last Education" >
+                      </div>
+                  </div>
+                  <div  class="form-group row">
+                    <label class="col-form-label col-md-4 text-md-right">Present Position</label>
+                    <div class="col-md-8 input-group ">
+                        <input type="text" formControlName="position" class="form-control" placeholder="Enter Present Position" >
+                    </div>
+                </div>
+                <div class="form-group row">
+                  <label class="col-form-label col-sm-4 text-sm-right ">Department <i class="text-danger">*</i> </label>
+                  <div class="col-md-8 input-group">
+                      <ng-select formControlName="departmentID" (change)="onselectDepartment($event)" [items]="departments" bindLabel="description" bindValue="id"  placeholder="Department"></ng-select>
+                  </div>
+              </div>
+              <div  class="form-group row">
+                  <label class="col-form-label col-sm-4 text-sm-right ">Hall/Institution <i class="text-danger">*</i> </label>
+                  <div class="col-md-8 input-group">
+                      <ng-select formControlName="hallID" (change)="onselectHall($event)"  [items]="halls" bindLabel="description" bindValue="id"  placeholder="Hall/Institution"></ng-select>
+                  </div>
+              </div>
+                </div>
+      </div>
+
+    </form>
+    <div class="row demo-inline-spacing  p-0" style="margin: 0 500px">
+      <button class="btn  btn-success mx-2">Reset</button>
+      <button class="btn  btn-primary mx-2" (click)="saveMember()">Apply</button>
+    </div>

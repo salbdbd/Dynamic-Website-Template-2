@@ -1,0 +1,177 @@
+div.modal-xl .modal-content {
+    max-height: 600px;
+    overflow: scroll;
+}
+.NewsText{
+  justify-content: left !important;
+  text-align: left !important;
+  overflow: scroll !important;
+  box-sizing: border-box !important;
+  width: 100% !important;
+  height: 600px !important;
+}
+
+.modal-container {
+  z-index: 1000000000 !important;
+  height: 600px !important;
+  margin-top: 5px !important;
+}
+::ng-deep .my-class .modal-dialog {
+    max-width: 80%;
+    width: 80%;
+}
+
+::ng-deep .my-classS .modal-dialog {
+    max-width: 70%;
+    width: 70%;
+}
+/* app-basic-modal.component.css */
+
+.modal-container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width:90%;
+    height:100%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  }
+  
+  .close-icon {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    font-size: 20px;
+    color: #555;
+  }
+  
+
+
+  .card {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    height: 100%;
+    /* width: 40%; */
+  }
+  
+  .card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  }
+  
+  .container {
+    display: flex;
+    justify-content: center !important;
+    align-items: center;
+    
+  
+  }
+  .TitleNClose {
+    width: 100%;
+  }
+  .picture {
+    width: 40%;
+    min-height: 10vh;
+    float: left;
+  }
+
+  .cmImage {
+    width: 500px !important;
+  height: 100% !important; 
+}
+p{
+  text-align: justify;
+}
+.datetime {
+  background: #1a1a31;
+  color: #fff !important;
+  padding: 5px 10px !important;
+  width: 20% !important;
+  text-align: center;
+}
+.full-page-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.966); /* Adjust the background color and opacity as needed */ 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.NewsText {
+  justify-content: left;
+  text-align: left;
+}
+.card-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: start !important;
+  align-items: top;
+  width: 100%;
+  padding: 0px 0px 0px 0px;
+}
+div.modal-xl .modal-content {
+  max-height: 600px;
+}
+
+::ng-deep .my-class .modal-dialog {
+  max-width: 80%;
+  width: 80%;
+}
+
+::ng-deep .my-classS .modal-dialog {
+  max-width: 70%;
+  width: 70%;
+}
+ .title{
+  width:100%; 
+  font-size: 30px;
+  
+  text-align: left;
+  color: #111; 
+ }
+ .card-title{
+  width: 100% !important;
+  font-size: 30px !important;
+  color: #222 !important;
+  text-align: left !important;
+ }
+ .niggerArseHORE {
+  display: flex;
+  flex-direction: column;
+  width: 100% !important;
+ }
+ .card-text{
+  width: 100% !important;
+  font-size: 15px !important;
+  color: #222 !important;
+  padding-top: 15px !important;
+ }
+ /* .datetime{
+  width: 100% !important;
+  font-size: 15px !important;
+  color: #222 !important;
+  padding-top: 15px !important;
+ } */
+ .close{
+  width: 70px;
+  height: 70px;
+  padding: 0px 20px !important;
+  font-size: 200px !important;
+ }
+
+  /* .row {
+     display: flex; 
+    justify-content: center !important;
+    align-items: center;
+  } */
+ .modal-container{
+  width:90%; 
+  margin:auto;
+  overflow: hidden;
+  box-sizing: border-box;
+  z-index: 999;
+ }

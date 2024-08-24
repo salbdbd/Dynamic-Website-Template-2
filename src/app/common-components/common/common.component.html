@@ -1,0 +1,10 @@
+<div class="container" *ngFor="let item of menuDetails">
+  <div class="header-section">
+    <div class="card-body">
+      
+      <img *ngIf="item.picture" class="cmImage mt-2" src="data:image/jpg;base64,{{item.picture}}" alt="image" /> 
+      <h5 class="card-title">{{item.pagesCaption}}</h5>
+      <p class="card-text">{{item.pagesDescription}}</p>
+    </div>
+  </div>
+</div>

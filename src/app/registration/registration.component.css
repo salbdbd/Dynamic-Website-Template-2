@@ -1,0 +1,58 @@
+#registration .container #registration-row #registration-column #registration-box {
+    max-width: 600px;
+    height: 560px;
+    border: 1px solid #eed5d5;
+    background-color: #eed8d8;
+}
+
+#registration .container #registration-row #registration-column #registration-box #registration-form {
+    padding: 20px;
+}
+
+.fadeInDown {
+    -webkit-animation-name: fadeInDown;
+    animation-name: fadeInDown;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+
+@-webkit-keyframes fadeInDown {
+    0% {
+        opacity: 0;
+        -webkit-transform: translate3d(0, -100%, 0);
+        transform: translate3d(0, -100%, 0);
+    }
+    100% {
+        opacity: 1;
+        -webkit-transform: none;
+        transform: none;
+    }
+}
+
+@keyframes fadeInDown {
+    0% {
+        opacity: 0;
+        -webkit-transform: translate3d(0, -100%, 0);
+        transform: translate3d(0, -100%, 0);
+    }
+    100% {
+        opacity: 1;
+        -webkit-transform: none;
+        transform: none;
+    }
+}
+
+.formContent {
+    -webkit-border-radius: 10px 10px 10px 10px;
+    border-radius: 10px 10px 10px 10px;
+    background: #fff;
+    padding: 30px;
+    width: 90%;
+    max-width: 450px;
+    position: relative;
+    padding: 30px;
+    -webkit-box-shadow: 0 20px 40px 0 rgba(0, 0, 0, 0.3);
+    box-shadow: 0 20px 40px 0 rgba(0, 0, 0, 0.3);
+}

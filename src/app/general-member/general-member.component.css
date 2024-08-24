@@ -1,0 +1,204 @@
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+/* Styles for Full-Screen Modal */
+.submitTransaction {
+  position: fixed !important; 
+  top: 10% !important;
+  left: 25% !important;
+  width: 50% !important;
+  height: auto !important;
+  background-color: rgb(255, 251, 251) !important; /* semi-transparent black background */
+  z-index: 9999 !important;  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  border-radius: 10px;
+  padding-bottom: 10% !important;
+  box-shadow: 2px 4px 8px rgba(90, 88, 88, 0.74) !important;
+}
+.submitTransaction-section{
+  position: fixed !important; 
+  top: 0% !important;
+  left: 0% !important;
+  width: 100% !important;
+  height: 100% !important;
+  background-color: rgba(78, 11, 11, 0.5) !important; 
+  z-index: 9999 !important;  
+ 
+}
+input{
+  font-size: 12px !important;
+} 
+label{
+  font-size: 12px !important;
+
+}
+
+
+@media (min-width: 768px) {
+  .modal-content {
+    max-width: 600px; /* adjust max-width for larger screens */
+  }
+}
+
+td, th {
+  text-align: left;
+  border-bottom: none;
+  font-size: 15px;
+}
+
+table {
+  width: 100%;
+  height: auto;
+  overflow-y: scroll;
+}
+tr {
+  overflow-x: scroll;
+
+}
+.tabs a { 
+  font-size: 15px;
+  color: #111;
+}
+.tabs a:hover {
+  color: #111;
+  text-decoration: none;
+}
+.tabs .item {
+  margin: 0px 2px;
+  border-right: 2px solid #829bdf;
+  border-left: 2px solid #829bdf;
+  padding: 0px 15px;
+  transition: .30s;
+}
+ .memberHide{
+  display: none;
+ }
+
+ .my-modal {
+  /* Add your custom styles here */
+  background-color: #f71616 !important;
+  border: 1px solid #ccc;
+  width: 100%;
+  z-index: 2000;
+  height:100vh;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(248, 5, 5, 0.1);
+}
+ 
+ table th,
+td {
+    vertical-align: middle;
+}
+
+td {
+    padding: 0;
+    padding-top: 0 !important;
+}
+
+td .form-control {
+    margin: 0;
+    border: 0;
+    padding: 1px;
+    text-align: center;
+    background: #eee;
+    border-radius: 0;
+    border: 1px solid #fff;
+}
+
+td .form-control:focus {
+    background: #ffffff;
+    border: 1px dotted #555;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+tbody {
+    display: block;
+    height: auto;
+    overflow: scroll;
+    background: rgb(255, 255, 255);
+    font-size: 15px !important;
+}
+
+thead,
+tbody tr {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+    /* even columns width , fix width of table too*/
+}
+
+thead {
+    width: calc( 100% -6px)/* scrollbar is average 1em/16px width, remove it from thead width */
+}
+
+.transTable {
+    max-width: 1300px;
+    overflow-x: scroll;
+}
+
+table {
+    overflow: scroll;
+}
+
+.btn:disabled {
+    cursor: not-allowed;
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+}
+
+::-webkit-scrollbar:hover {
+    width: 15px;
+}
+
+
+/* Track */
+
+::-webkit-scrollbar-track {
+    background: #eee;
+}
+
+
+/* Handle */
+
+::-webkit-scrollbar-thumb {
+    background: #ffffff;
+}
+
+
+/* Handle on hover */
+
+::-webkit-scrollbar-thumb:hover {
+    background: #666;
+}
+
+ 
+div.modal-xl .modal-content {
+    max-height: 600px;
+    overflow: auto;
+}
+
+::ng-deep .my-class .modal-dialog {
+    max-width: 80%;
+    width: 80%;
+}
+
+::ng-deep .my-classS .modal-dialog {
+    max-width: 70%;
+    width: 70%;
+}
+
+ 

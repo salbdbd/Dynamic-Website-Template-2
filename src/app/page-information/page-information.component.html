@@ -1,0 +1,24 @@
+<div class="row center" style="background-color: #9ad5fc;">
+    <div class="col-md-2"></div>
+    <div class="col-md-8" style="background-color: #9ad5fc;">
+        <div *ngFor="let item of PageInfo">
+            <tr class="card">
+                <div class="head py-2">
+                    <h4 class="card-header text-center ">{{item.pagesCaption}}</h4>
+                </div>
+                <div class="row">
+                    <div class="col-md-3"></div>
+                    <div class="col-md-6">
+                        <img class="cmImage" src="../../assets/images/nature.png">
+                        
+                    </div>
+                    <div class="col-md-3"></div>
+                </div>
+                <div class=" mt-3 form-group ml-3 mr-3" style="height: auto; overflow: auto;">
+                    {{item.pagesDescription}}
+                </div>
+            </tr>
+        </div>
+    </div>
+    <div class="col-md-2"></div>
+</div>

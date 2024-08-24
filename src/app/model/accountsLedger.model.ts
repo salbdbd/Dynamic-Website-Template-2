@@ -1,0 +1,19 @@
+export class AccountsLedgerModel{
+  typeName:string
+  transNo:number=0
+  vdate:string
+  voucherType:string
+  vno:string
+  amount:number=0
+  comCod:number=0
+  brID:number=0
+  accountName:string
+  subID:number=0
+  adSubID:number=0
+  aliasName:string
+  drAmount:number=0
+  crAmount:number=0
+  accType:string
+  transType:number=0
+  transId:number=0
+}

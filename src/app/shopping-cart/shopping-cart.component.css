@@ -1,0 +1,16 @@
+@media (min-width: 1025px) {
+    .h-custom {
+        height: 100vh !important;
+    }
+}
+.section-header{
+    width: 100%;
+    height: auto;
+    overflow-y: scroll;
+    box-sizing: border-box;
+}
+.card{
+    width: 90% ;
+    height: auto; 
+    margin: auto;
+}

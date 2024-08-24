@@ -1,0 +1,56 @@
+<section style="background-color:#EFEFEF">
+
+  <div class="head py-2">
+    <h4 class="text-center mt-1 mb-0">News And Events</h4>
+  </div> 
+
+  <div class=" PADFE ">
+    <div class="d-flex  bakamono flex-wrap">
+      <!-- <div *ngFor="let item of news" class=" py-2 col-md-3 ">
+        <div class="card shadow   text-center">
+          <div class="card-body" (click)="createNewItem(item)" >               
+            <h6 class=" datetime">{{item.inActiveDate | date:'dd &nbsp;|&nbsp; MM &nbsp;|&nbsp; yyyy'}}</h6>
+           
+            <img *ngIf="item.picture" class="cmImage mt-2" src="data:image/jpg;base64,{{item.picture}}" alt="image" /> 
+              
+            <h5 class="card-title p-1 fs-3">{{item.headLine}}</h5>
+            <p class="card-text text-center">{{item.newsInfo.substring(0, 130)}} ...</p>
+            
+          </div>
+          <button class="btn btn-outline-info mb-2 class-button" (click)="createNewItem(item)"> Read More</button> 
+        </div>
+      </div>  -->
+      <div *ngFor="let item of events" class=" py-2    ">
+        <div class="card shadow   text-center" >
+          <img  *ngIf="item.picture" class="cmImage mt-2" src="data:image/jpg;base64,{{item.picture}}" alt="image" /> 
+          <div class="card-body" (click)="createNewItem(item)">   
+              <!-- <img (click)="createNewItem(item)"  *ngIf="item.picture" class="cmImage mt-2" src="data:image/jpg;base64,{{item.picture}}" alt="image" />              
+            <h6 class="card-text">{{item.inActiveDate | date:'dd/MM/yyyy'}}</h6>
+            <h5 class="card-title">{{item.headLine}}</h5>
+            <p class="card-text">{{item.newsInfo}}</p>  -->
+            
+            <h6 class=" datetime">{{item.inActiveDate | date:'dd &nbsp;|&nbsp; MM &nbsp;|&nbsp; yyyy'}}</h6>
+            
+            <h5 class="card-title p-1 fs-3">{{item.headLine}}</h5>
+            <p class="card-text" style="height: 45px !important;">{{item.newsInfo.substring(0, 130)}} ...</p>
+            
+            <button class="buttonReadMore class-button" (click)="createNewItem(item)"> Read More</button> 
+          </div>     
+      </div>
+      </div>
+    </div>
+  </div>
+ 
+</section> 
+
+
+ 
+
+<ng-container *ngIf="showBasicModal"> 
+    <ng-container *ngTemplateOutlet="transList"></ng-container>   
+</ng-container>
+
+<ng-template #transList>
+  <app-basic-modal (selectEvent)="getNews()" [newsenvent]="0" [modalData]="passnews" [title]="title" ></app-basic-modal>
+</ng-template>
+ 
